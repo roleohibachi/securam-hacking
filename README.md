@@ -5,8 +5,24 @@ I have a safe. I want it to be less safe.
 
 ### External
 
-- Keypad. The keypad has 12 buttons on the front - 0-9, #, and \*. It has 11 pins in back, connected with a 12-pin header. It is NOT a matrix keypad! When a button is pressed, the corresponding pin is pulled down to ground (the 11th pin is ground). # and \* are not populated with contacts at all.
+- Keypad. The keypad has 12 buttons on the front - 0-9, #, and \*. It has 11 pins in back, connected with a 12-pin header. It is NOT a matrix keypad! When a button is pressed, the corresponding pin is pulled down to ground. # and \* are not populated with contacts at all.
+  - Pinout: From left to right, pins correspond to buttons 9, 0, 8, 7, 6, 4, 3, 2, 1, 5, (N/C), GND.
 - Board. The board contains only analog components. A diode and voltage regulator give 3.3V from the 9V battery. A 3K resistor ladder is connected to the keypad, such that pressing any button gives a unique analog voltage between 0V and 0.5V. A four-pin header exposes this voltage to an internal ADC (presumably). The pins on this header are labelled, deceptively, SCL, SDA, VH, GND. SCL is the analog output, SDA is a pulse to indicate when a key is first pressed, VH is direct from the 9V battery, and GND is GND.
+
+| Pin | Button | "SCL" |
+|-----|--------|------ |
+| 1   | 9      | 0.00  |
+| 2   | 0      | 0.06  |
+| 3   | 8      | 0.13  |
+| 4   | 7      | 0.19  |
+| 5   | 6      | 0.24  |
+| 6   | 4      | 0.30  |
+| 7   | 3      | 0.35  |
+| 8   | 2      | 0.41  |
+| 9   | 1      | 0.46  |
+| 10  | 5      | 0.50  |
+| 11  | N/C    |       |
+| 12  | GND    |       |
 
 ### Internal
 
