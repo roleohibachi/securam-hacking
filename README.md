@@ -24,6 +24,10 @@ I have a safe. I want it to be less safe.
 | 11  | N/C    |       |
 | 12  | GND    |       |
 
+One way or another, I'll need to implement a DAC with a 0.5V dynamic range and resolution of 10. Two quick ways come to mind:
+- PWM and a capacitor. This can achieve arbitrary precision with a big-enough capacitor. Might be quicker.
+- Resistor ladder, just like they did. Maybe even use theirs, and override the keypad signal?
+
 ### Internal
 
 TODO. It's surely just a servo to do the unlocking and an MCU with ADC to do the keypad reading, code storing, resetting, etc.
